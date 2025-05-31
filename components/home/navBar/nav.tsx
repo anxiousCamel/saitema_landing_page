@@ -1,11 +1,37 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import blankaFont from "../../../src/fonts/fonts";
 import { NAV_LINKS } from "../../../constant/constant";
+import { HiBars3BottomRight } from "react-icons/hi2";
 
-const DesktopNav = () => {
+type Props = {
+  openNav: () => void;
+};
+
+
+const Nav = ({ openNav }: Props) => {
+
+  const [navBg, setNavBg] = React.useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 90) {
+        setNavBg(true);
+      } else {
+        setNavBg(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);   
+
   return (
-    <nav className="fixed top-0 z-[100] w-full bg-[#003F88] text-white shadow-lg transition-all duration-200 h-[12vh] flex items-center px-4">
+    <nav className={`transition-all ${navBg ? "bg-blue-900 shadow-md" : "bg-[#003F88]"} fixed top-0 z-[100] w-full text-white shadow-lg transition-all duration-200 h-[12vh] flex items-center px-4 ${navBg ? "bg-opacity-90" : "bg-opacity-100"}`}>
       <div className="flex justify-between items-center w-full max-w-[1280px] mx-auto px-2 lg:px-6">
 
         {/* Logo */}
@@ -40,13 +66,11 @@ const DesktopNav = () => {
           </Link>
         </div>
 
-        {/* Mobile menu placeholder*/}
-        <div className="lg:hidden">
-          {/* Botão/menu hamburger pode ser adicionado aqui */}
-        </div>
+        {/* Burguer Menu*/}
+        <HiBars3BottomRight onClick={openNav} className="text-white w-8 h-8 cursor-pointer lg:hidden" />
       </div>
     </nav>
   );
 };
 
-export default DesktopNav;
+export default Nav;

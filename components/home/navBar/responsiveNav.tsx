@@ -1,12 +1,19 @@
-import React from "react";
-import DesktopNav from "./desktopNav";
+"use client"; 
+import React, { useState } from "react";
+import Nav from "./nav";
+import MobileNav from "./mobileNav";
 
-const ResponsiveNav = () => {
+const ResponsiveNav = () => { 
+  const [showNav, setShadowNav] = useState(false);
+  const openNavHandler =()=> setShadowNav(true);
+  const closenavHandler =()=> setShadowNav(false); 
+
   return (
     <nav>
-      <DesktopNav />
+      <Nav openNav={openNavHandler} />
+      <MobileNav showNav={showNav} closeNav={closenavHandler} />
     </nav>
   );
-}
+};
 
 export default ResponsiveNav;
