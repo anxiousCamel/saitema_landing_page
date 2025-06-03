@@ -57,7 +57,7 @@ const Nav = ({ openNav }: Props) => {
         </div>
 
         {/* Botão de Acesso Área do Cliente */}
-        <div className="hidden lg:flex items-center space-x-4">
+        <div className="flex items-center space-x-4">
           <Link
             href="/area-cliente"
             className="bg-[#FDC500] hover:bg-[#FFD500] text-[#00296B] font-semibold px-5 py-2.5 rounded shadow-[0_0_10px_rgba(253,197,0,0.5)] transition duration-200"
