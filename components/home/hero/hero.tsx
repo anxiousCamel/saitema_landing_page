@@ -12,12 +12,11 @@ const Hero = () => {
             Tecnologia sem complicação.
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Saitema entrega automação<br />
-            <span className="text-yellow-400">sob demanda</span>.
+            Automação<br />
+            <span className="text-yellow-400">personalizada</span> para o seu negócio.
           </h1>
           <p className="text-sm sm:text-base font-medium md:text-lg text-gray-300">
-            A Saitema é uma plataforma de automação que conecta empresas a desenvolvedores,
-            oferecendo soluções personalizadas para otimizar processos e reduzir custos.
+            Um sistema comercial que se molda ao seu negócio. Escolha os módulos, o visual e comece a vender do seu jeito com o Saitema.
           </p>
 
           {/* Botão */}

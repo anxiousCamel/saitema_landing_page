@@ -8,15 +8,10 @@ export const NAV_LINKS = [
     {
         id: 2,
         url: '#',
-        label: 'About',
-    },
-    {
-        id: 3,
-        url: '#',
         label: 'Services',
     },
     {
-        id: 4,
+        id: 3,
         url: '#',
         label: 'Contact',
     },
